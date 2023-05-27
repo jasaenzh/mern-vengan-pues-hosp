@@ -16,4 +16,16 @@ export interface Apartment {
     sofaBed: number;
     television: number;
     internet: boolean;
+    kitchen: boolean;
+    fridge: boolean;
+    washingMachine: boolean;
+    microwave: boolean;
+    cafetera: boolean;
+    blender: boolean;
+    breadToaster: boolean;
+    pressureCooker: boolean;
+    riceCooker: boolean;
+    sandwichBowl: boolean;
+    securityCamera: boolean;
+    terraceView: boolean;
 }
