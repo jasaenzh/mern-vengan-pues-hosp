@@ -1,11 +1,14 @@
 import { Router } from 'express';
-import { listApartament, saveApartament } from '../controllers/apartament.controller';
+import { deleteApartamentById, detailApartamentById, listApartaments, saveApartament, updateApartamentById } from '../controllers/apartament.controller';
 
 
 const router = Router();
 
-router.get("/", listApartament)
+router.get("/", listApartaments)
+router.get("/:id", detailApartamentById)
 router.post("/", saveApartament)
+router.put("/:id", updateApartamentById)
+router.delete("/:id", deleteApartamentById)
 
 
 export default router;
