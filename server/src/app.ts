@@ -23,6 +23,7 @@ app.use(express.json());
 // Ruta principal
 app.use(router)
 
+
 // Conexion a la base de datos
 dbConnect().then(() => console.log(`Conexión a la base de datos exitosa`))
 
