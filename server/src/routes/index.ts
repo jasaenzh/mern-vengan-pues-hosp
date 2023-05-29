@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import apartamentRouter from './apartament.route'
+import authRouter from './auth.route'
 
 const router = Router();
 
@@ -9,6 +10,7 @@ router.get("/", (req: Request, res: Response) => {
 })
 
 router.use("/api/apartamentos", apartamentRouter)
+router.use("/api/auth", authRouter)
 
 router.use("*", (req: Request, res: Response) => {
     res.status(404).send(
