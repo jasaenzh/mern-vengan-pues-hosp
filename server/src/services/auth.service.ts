@@ -2,6 +2,7 @@ import { Auth } from "../interfaces/auth.interface";
 import { User } from "../interfaces/user.interface";
 import UserModel from "../models/User.model";
 import { encrypt, verified } from "../utils/bcrypt.handle";
+import { generateToken } from "../utils/jwt.handle";
 
 
 const saveNewUser = async ({ email, password, name }: User) => {
@@ -36,9 +37,18 @@ const loginUser = async ({ email, password }: Auth) => {
     // Comparo la que viene de la base de datos con la que ingresa el usuario
     const isCorrect = await verified(password, passHash);
 
+    // Retorno un mensaje si los datos no son correctos
     if (!isCorrect) return "Datos incorrectos"
 
-    return checkUser;
+    // Genero el token
+    const token = generateToken(checkUser.email)
+
+    const data = {
+        token: token,
+        user: checkUser
+    }
+
+    return data;
 
 }
 
