@@ -1,0 +1,31 @@
+export interface ApartamentInterface {
+    apartmentNumber: string;
+    location: string;
+    mtsArea: number;
+    price: number;
+    duplex: boolean;
+    bedrooms: number;
+    doubleBeds: number;
+    singleBeds: number;
+    nestBed: number;
+    bathrooms: number;
+    hotWater: boolean;
+    hairDryer: number;
+    livingRoom: boolean;
+    diningRoom: number;
+    sofaBed: number;
+    television: number;
+    internet: boolean;
+    kitchen: boolean;
+    fridge: boolean;
+    washingMachine: boolean;
+    microwave: boolean;
+    cafetera: boolean;
+    blender: boolean;
+    breadToaster: boolean;
+    pressureCooker: boolean;
+    riceCooker: boolean;
+    sandwichBowl: boolean;
+    securityCamera: boolean;
+    terraceView: boolean;
+}
