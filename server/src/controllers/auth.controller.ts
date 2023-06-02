@@ -25,6 +25,11 @@ const getLoginUser = async (req: Request, res: Response) => {
     try {
         const { email, password } = req.body;
         const responseUser = await loginUser({ email, password })
+
+        if (responseUser === 'Datos incorrectos') {
+            handleSuccessResponse(res, 403, null, responseUser)
+            return;
+        }
         handleSuccessResponse(res, 200, responseUser)
     } catch (error) {
         handleErrorResponse(res, 400, error, "Ocurrio un error en la busqueda del usuario")
