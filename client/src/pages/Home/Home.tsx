@@ -3,12 +3,14 @@ import { getApartamentos } from "../../services/user.service";
 import { getApartment } from "../../redux/states/apartament";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { AppStore } from "../../redux/store";
 
 function Home() {
 
     const dispatch = useDispatch();
 
-    const apartaments = useSelector((state: any) => state.apartament.data)
+    const apartaments = useSelector((state: AppStore) => state.apartament)
+
 
     console.log(apartaments);
 
@@ -28,7 +30,7 @@ function Home() {
     return (
         <div>
             Home
-            {apartaments.map((apartament: any) => apartament.apartmentNumber)}
+
         </div>
     )
 }
