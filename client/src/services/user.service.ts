@@ -6,6 +6,8 @@ export const login = async (email: string, password: string) => {
 }
 
 export const getApartamentos = async () => {
-    return await fetch(urlApartamentos).then(res => res.json())
+    const response = await fetch(urlApartamentos)
+    const data = await response.json()
+    return data
 }
 
