@@ -1,18 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getApartamentos } from "../../services/user.service";
-import { getApartment } from "../../redux/states/apartament";
+import { getApartment } from "../../redux/slice/apartment/apartament";
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { AppStore } from "../../redux/store";
+import { useAppDispatch, useAppSelector } from "../../redux/store";
 
 function Home() {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
-    const apartaments = useSelector((state: AppStore) => state.apartament)
-
-
-    console.log(apartaments);
+    const apartaments = useAppSelector((state) => state.apartment.apartments)
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,7 +25,12 @@ function Home() {
     return (
         <div>
             Home
-
+            {apartaments.map((apartament, index) => (
+                <div key={index}>
+                    <h1>{apartament.apartmentNumber}</h1>
+                    <h1>{apartament._id}</h1>
+                </div>
+            ))}
         </div>
     )
 }

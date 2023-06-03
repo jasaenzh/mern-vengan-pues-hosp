@@ -1,9 +1,9 @@
 import { Provider } from 'react-redux';
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import store from './redux/store';
 import { Home } from './pages/Home';
 import Layout from './layout/Layout';
+import { store } from './redux/store';
 
 function App() {
   return (

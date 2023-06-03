@@ -1,4 +1,5 @@
 export interface ApartamentInterface {
+    _id: string;
     apartmentNumber: string;
     location: string;
     mtsArea: number;
