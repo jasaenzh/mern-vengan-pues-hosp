@@ -2,7 +2,9 @@ import { useState } from 'react';
 import Logo from '../../../public/iconoVenganPues.png';
 import Button from '../Button';
 import { IonIcon } from '@ionic/react';
-import { homeOutline, menu, close } from 'ionicons/icons';
+// Iconos, este es de una casa homeOutline
+import { menu, close } from 'ionicons/icons';
+import { Link } from 'react-router-dom';
 
 
 
@@ -40,7 +42,11 @@ const Navbar = () => {
                             </li>
                         ))
                     }
-                    <Button>Iniciar sesion</Button>
+                    <Link to="/login">
+                        <Button>
+                            Iniciar sesion
+                        </Button>
+                    </Link>
                 </ul>
 
             </div>

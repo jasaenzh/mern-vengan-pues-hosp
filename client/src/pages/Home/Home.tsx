@@ -3,8 +3,9 @@ import { getApartment } from "../../redux/slice/apartment/apartament";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/store";
 
-function Home() {
+const Home: React.FC = () => {
 
+    // Con el dispatch se a a disparar (alterar) la accion (estado)
     const dispatch = useAppDispatch();
 
     const apartaments = useAppSelector((state) => state.apartment.apartments)
